@@ -1,0 +1,493 @@
+/* ===== CONFIGURAÇÕES GERAIS E TEMA ===== */
+/* CORES TEMA ESCURO */
+[data-theme="dark"] {
+    --cor-fundo: #111827;
+    --cor-fundo-secundario: #1F2937;
+    --cor-texto-principal: #F9FAFB;
+    --cor-texto-secundario: #D1D5DB;
+    --cor-destaque: #00a2ff;
+    --cor-destaque-secundaria: #004cff;
+}
+
+/* CORES TEMA CLARO */
+[data-theme="light"] {
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-secundario: #F3F4F6;
+    --cor-texto-principal: #111827;
+    --cor-texto-secundario: #4B5563;
+    --cor-destaque: #007BFF;
+    --cor-destaque-secundaria: #0015ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    text-align: center;
+    background-color: var(--cor-fundo);
+    display: flex; 
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%; /* lista ocupa toda a largura da nav */
+    text-align: center; /* centraliza os itens */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+nav ul li a.active {
+    color: var(--cor-destaque);
+    cursor: default;
+}
+
+
+/* ===== HEADER ===== */
+header#inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+header#inicio h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+header#inicio h1 span {
+    color: var(--cor-destaque);
+}
+
+header#inicio p {
+    font-size: 1.5rem;
+    color: var(--cor-texto-principal);
+    margin-bottom: 15px;
+}
+
+header#inicio p.descricao {
+    font-size: 1rem;
+    max-width: 500px;
+    color: var(--cor-texto-secundario);
+}
+
+.social-links {
+    margin-top: 20px; 
+    text-align: center; /* Centraliza os ícones */
+}
+
+.social-links a {
+    margin: 0 15px;
+    color: var(--cor-destaque);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--cor-destaque);
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(2);
+}
+
+/* ===== SEÇÕES ===== */
+main section {
+    padding: 120px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main section:nth-of-type(even) {
+    background-color: var(--cor-fundo-secundario);
+}
+
+main section h2 {
+    font-size: 2.8rem;
+    color: var(--cor-destaque);
+    margin-bottom: 40px;
+}
+
+article {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 3px solid var(--cor-destaque);
+}
+
+article h3, article h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+article p {
+    color: var(--cor-texto-secundario);
+}
+
+article a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* ===== SELETOR DE TEMA ===== */
+/* switch na barra de navegação */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    right: 30px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 48px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: var(--cor-fundo-secundario);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--cor-destaque);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.theme-switch-wrapper svg {
+    width: 20px;
+    height: 20px;
+    color: var(--cor-destaque);
+}
+
+/* ===== SOBRE MIM ===== */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 40px;
+}
+
+.sobre-foto img {
+    width: 200px; /* Tamanho da foto */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--cor-destaque);
+    transition: border-color 0.6s ease; 
+
+}
+
+.sobre-foto img:hover {
+    border-color: var(--cor-texto-principal); 
+}
+.sobre-texto p {
+    margin-bottom: 15px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.sobre-texto strong {
+    color: var(--cor-texto-principal);
+}
+
+footer {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    gap: 15px;
+}
+
+/* ===== EXPERIÊNCIA ===== */
+/* linha do tempo */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* linha vertical fica no centro (mantida com a cor principal */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: var(--cor-destaque);
+}
+
+/* item na linha do tempo */
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    background-color: var(--cor-fundo-secundario);
+    border-radius: 8px;
+    width: 45%;
+    margin-bottom: 40px;
+}
+
+/* ÍMPARES NA ESQUERDA */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* PARES NA DIREITA */
+.timeline-item:nth-child(even) {
+    left: 55%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--cor-destaque);
+    border: 3px solid var(--cor-fundo-secundario);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -39px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -40px;
+}
+
+.timeline-item h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+    color: var(--cor-texto-principal);
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+}
+
+.timeline-item ul {
+    list-style: none;
+}
+
+.timeline-item ul li {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 5px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item.academico h3 {
+    color: var(--cor-destaque-secundaria);
+}
+
+.timeline-item.academico::before {
+    background-color: var(--cor-destaque-secundaria);
+}
+
+/* ===== PORTFÓLIO ===== */
+/* O container que organiza os projetos em grade */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+/* card de cada projeto */
+.project-card {
+    background-color: var(--cor-fundo-secundario);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.project-links a {
+    text-decoration: none;
+    color: var(--cor-destaque);
+    font-weight: bold;
+    margin-right: 20px;
+    transition: text-decoration 0.3s;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== ESTILOS FILTRO PORTFÓLIO ===== */
+.filter-buttons {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.filter-buttons button {
+    background-color: transparent;
+    border: 1px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+
+.filter-buttons button.active {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+.tag-count {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 8px;
+}

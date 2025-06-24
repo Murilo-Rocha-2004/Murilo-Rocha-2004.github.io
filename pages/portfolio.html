@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Murilo Rocha</title>
+    <title>Portfólio - Murilo Rocha de Araujo</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Barra de navegação -->
     <nav>
         <ul>
-            <li><a href="index.html" class="active">Início</a></li> 
-            <li><a href="pages/sobre.html">Sobre</a></li>
-            <li><a href="pages/experiencia.html">Experiência</a></li>
-            <li><a href="pages/portfolio.html">Portfólio</a></li>
+            <li><a href="../index.html">Início</a></li> 
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="experiencia.html">Experiência</a></li>
+            <li><a href="portfolio.html" class="active">Portfólio</a></li>
         </ul>
         <div class="theme-switch-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -27,12 +27,62 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </div>
     </nav>
-    <!-- Informações Gerais -->
-    <header id="inicio">
-        <h1>Oi, eu sou <span>Murilo Rocha de Araujo</span></h1>
-        <p>Engenharia da Computação</p>
-        <p class="descricao">Sou estudante de <b>Engenharia da Computação</b> e atualmente faço estágio na <b>General Motors</b></p>
-        
+
+    <main>
+        <section id="portfolio">
+            <h2>Meus Projetos</h2>
+            
+            <div class="filter-buttons"></div>
+
+            <div class="portfolio-grid">
+
+                <article class="project-card">
+                    <img src="../assets/img/TicTacToe.png" alt="Imagem do Jogo da Velha no terminal">
+                    <div class="project-content">
+                        <h3>Jogo da Velha</h3>
+                        <p>
+                            Implementação clássica do Jogo da Velha desenvolvida em C puro, 
+                            criada como um desafio pessoal no primeiro semestre da faculdade. 
+                            O projeto, que roda em terminal, aplica o conceito de matrizes para gerenciar o tabuleiro e 
+                            possui modos de jogo para dois jogadores e contra um bot com jogadas aleatórias.
+                        </p>
+                        <div class="project-tags">
+                            <span>C</span>
+                            <span>Algoritmos</span>
+                            <span>Terminal</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="[LINK PARA O PROJETO]" target="_blank" rel="noopener noreferrer">Código Fonte</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="../assets/img/Portfolio.png" alt="Imagem do da Home Page do Portfólio">
+                    <div class="project-content">
+                        <h3>Portfólio Pessoal</h3>
+                        <p>
+                            Desenvolvimento do meu portfólio profissional do zero, utilizando as melhores práticas de HTML5, CSS3 e JavaScript. 
+                            O site é totalmente responsivo, com múltiplas páginas e um sistema de filtragem de projetos dinâmico e automatizado, 
+                            construído com JavaScript puro.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://murilo-rocha-2004.github.io" target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                            <a href="https://github.com/Murilo-Rocha-2004/Murilo-Rocha-2004.github.io" target="_blank" rel="noopener noreferrer">Código Fonte</a>
+                        </div>
+                    </div>
+                </article>
+
+                </div>
+        </section>
+    </main>
+
+    <footer>
         <!-- Contato -->
         <div class="social-links">
             <a href="mailto:rochadearaujomurilo@gmail.com" target="_blank">
@@ -48,8 +98,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
         </div>
-    </header>
+    </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
